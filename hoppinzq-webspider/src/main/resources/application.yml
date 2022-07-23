@@ -2,7 +2,7 @@ server:
   port: 8806
 spring:
   profiles:
-    active: dev
+    active: loc
 
 logging:
   level:

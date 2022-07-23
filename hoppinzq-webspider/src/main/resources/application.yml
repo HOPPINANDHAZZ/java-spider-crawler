@@ -1,0 +1,10 @@
+server:
+  port: 8806
+spring:
+  profiles:
+    active: dev
+
+logging:
+  level:
+    com:
+      hoppinzq: DEBUG

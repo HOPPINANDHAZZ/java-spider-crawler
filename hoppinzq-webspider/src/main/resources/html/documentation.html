@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档</title>
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/static/css/plugins/lightbox.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/LineIcons.3.0.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/simple-bar.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/footer.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/main.css">
+</head>
+<style>
+    div:focus, div:active, button:focus, button:active, a:focus, a:active {
+        outline: none;
+    }
+
+    body, div {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    section, .doc-main-wrapper {
+        outline: 1px solid transparent;
+    }
+    .footer-menu-items{
+        margin: 2px 0px;
+    }
+</style>
+
+<body class="position-relative" data-bs-spy="scroll" data-bs-target="#navbar-example2" tabindex="0">
+
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+
+<header class="header navbar-area others-pages">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="nav-inner">
+
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="">
+                            <img src="http://hoppinzq.com/static/images/logo/1640338711_113639.png" alt="Logo">
+                        </a>
+                        <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a href="index.html" aria-label="Toggle navigation">首页</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="documentation.html" class="active" aria-label="Toggle navigation">文档</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="contact.html" aria-label="Toggle navigation">建议</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="button">
+                            <a href="add.html" class="btn">创建一个爬虫 <i class="lni lni-circle-plus"></i></a>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <button class="menu-button menu-open">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="doc_overlay"></div>
+    <div class="container doc_container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12">
+                <aside data-simplebar="" class="doc-sidebar">
+                    <button class="menu-button menu-close">
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <nav class="sidenav" id="navbar-example2">
+                        <ul class="nav flex-column">
+                            <li>
+                                <h6><i class="lni lni-list"></i> 开始使用 </h6>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#installation" class="nav-link active">环境安装</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#quick-start">项目配置</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#layout-theme">内置页面</a>
+                            </li>
+                            <li>
+                                <h6><i class="lni lni-grid-alt"></i> 爬虫</h6>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#pcn">爬虫的原生实现</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#spider">蜘蛛</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#webmagic"> webMagic</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#youget">you-get</a>
+                            </li>
+                            </li>
+                            <li>
+                                <h6><i class="lni lni-notepad"></i> 其他</h6>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#changelog">日志</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#credits">鸣谢</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-12">
+                <section class="main-section" tabindex="0">
+                    <div class="doc-main-wrapper">
+                        <div class="welcome mb-10">
+                            <h1 class="mb-30">
+                                欢迎您使用 <span class="template-name">zDoc</span> 来展示爬虫文档
+                            </h1>
+                            <div class="author-info">
+                                <img src="http://150.158.28.40:9000/e3f22651f73e46979d9461f38cb2ab0a.jpg" alt="#">
+                                <div>
+                                    <p class="name">zhangqi</p>
+                                    <span>2022/07/16</span>
+                                </div>
+                            </div>
+                            <p class="mb-10">
+                                首先呢，这是一个SpringBoot项目，你可以直接<a href="contact.html" class="ticket" target="_blank">在gitee上拉取该项目</a>
+                            </p>
+                            <p class="mb-10">
+                                请确保您的电脑
+                                或者服务器上有Python3.x的环境，否则一些功能将不可用。如果您的服务器是CentOS操作系统，则您的服务器上会自带Python环境，请在
+                                <mark>/usr/bin/</mark>
+                                下确认Python版本
+                            </p>
+                            <div class="doc-title pt-30" id="installation">
+                                <h2>环境安装</h2>
+                            </div>
+                            <div class="box">
+                                <h5 class="mb-10">Windows安装</h5>
+                                <ol class="mb-30" style="list-style: auto; padding-left: 20px;">
+                                    <li>
+                                        <p class="mb-10">1、在<a href="https://www.python.org/" class="ticket"
+                                                               target="_blank">Python官网下载</a></p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">2、检查python和pip安装是否成功(我很早就装过，你们自行百度吧>_<)
+                                            <a href="http://hoppinzq.com/spider/picture/pythonwindow.png" class="img-light" rel="lightbox"><img
+                                                    src="http://hoppinzq.com/spider/picture/pythonwindow.png" alt=""/></a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">3、安装you-get</p>
+                                    </li>
+                                    <pre data-simplebar="" class="code-box"> <button class="copy-btn">复制</button><code>pip install you-get</code> </pre>
+                                    <li>
+                                        <p class="mb-10">
+                                            4、如果你还想爬取bilibili的视频，还需安装ffmpeg，因为bilibili的视频是分为了两个mp4：一个是纯视频（无声），一个是纯音频（无视频）。需要我使用ffmpeg将两个视频合并</p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">5、在<a href="https://ffmpeg.org/download.html" class="ticket"
+                                                               target="_blank">官网下载ffmpeg</a>，或者<a
+                                                href="http://150.158.28.40:8090/baseFile/downloadFile/e4f387dab099432dbbeb66341b47b875"
+                                                class="ticket"
+                                                target="_blank">点我下载。</a></p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">6、解压，并将bin文件的全路径添加进环境变量
+                                            <a href="http://hoppinzq.com/spider/picture/ffmpegbin.png" class="img-light"
+                                               rel="lightbox"><img src="http://hoppinzq.com/spider/picture/ffmpegbin.png" alt=""/></a>
+                                            <a href="http://hoppinzq.com/spider/picture/26a40f70e9229ed16973a6f5966500e.jpg"
+                                               class="img-light" rel="lightbox"><img
+                                                    src="http://hoppinzq.com/spider/picture/26a40f70e9229ed16973a6f5966500e.jpg"
+                                                    alt=""/></a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">7、验证安装是否成功</p>
+                                    </li>
+                                    <pre data-simplebar="" class="code-box"> <button class="copy-btn">复制</button><code>ffmpeg -version</code> </pre>
+
+                                </ol>
+                            </div>
+                            <div class="box">
+                                <h5 class="mb-10">CentOS安装</h5>
+                                <ol class="mb-30" style="list-style: auto; padding-left: 20px;">
+                                    <li>
+                                        <p class="mb-10">1、在Python环境下安装pip3</p>
+                                    </li>
+                                    <pre data-simplebar="" class="code-box"> <button class="copy-btn">复制</button><code> yum install -y python3-pip</code></pre>
+                                    <li>
+                                        <p class="mb-10">2、检查安装是否成功</p>
+                                    </li>
+                                    <pre data-simplebar="" class="code-box"> <button class="copy-btn">复制</button><code> pip3 -V</code> </pre>
+                                    <li>
+                                        <p class="mb-10">3、安装you-get</p>
+                                    </li>
+                                    <pre data-simplebar="" class="code-box"> <button class="copy-btn">复制</button><code>pip install you-get</code> </pre>
+                                    <p> 你已经完成基本的配置</p>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div id="quick-start" class="installing pt-30">
+                            <div class="doc-title">
+                                <h2>项目配置</h2>
+                            </div>
+                            <p class="mb-10">
+                                如果您已经拉下该项目，您需要修改若干配置才可以顺利运行。在此之前，我默认您的计算机有
+                                <span class="template-name text-medium"> Java </span> 环境，并熟悉
+                                <span class="template-name text-medium"> Spring </span>
+                            </p>
+
+                            <ol class="mb-30" style="list-style: auto; padding-left: 20px;">
+                                <li>
+                                    <p class="mb-10">1、确保有可用的数据库环境，并执行以下SQL脚本：（或者<a href="http://150.158.28.40:8090/baseFile/downloadFile/93056909e7d7458a83673b49c315f9cc" class="ticket">点击下载SQL文件</a>）</p>
+                                </li>
+                                <pre data-simplebar="" class="code-box"><button class="copy-btn">复制</button><code>/* spider表 */
+DROP TABLE IF EXISTS `spider`;
+
+CREATE TABLE `spider` (
+  `id` int(7) NOT NULL AUTO_INCREMENT,
+  `title` longtext,
+  `link` longtext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33771 DEFAULT CHARSET=utf8mb4;
+
+/* 日志表 */
+DROP TABLE IF EXISTS `my_log`;
+
+CREATE TABLE `my_log` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(32) DEFAULT NULL,
+  `url` varchar(128) DEFAULT NULL,
+  `httpMethod` varchar(128) DEFAULT NULL,
+  `classMethod` varchar(128) DEFAULT NULL,
+  `createTime` datetime DEFAULT NULL,
+  `logLevel` varchar(11) DEFAULT NULL,
+  `requestParams` longblob,
+  `timeCost` int(8) DEFAULT NULL,
+  `result` longblob,
+  `exception` longblob,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32101 DEFAULT CHARSET=utf8;
+
+/* 反馈表 */
+DROP TABLE IF EXISTS `feedback`;
+
+CREATE TABLE `feedback` (
+  `id` INT(7) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(128) DEFAULT NULL,
+  `contact` VARCHAR(128) DEFAULT NULL,
+  `message` VARCHAR(2048) DEFAULT NULL,
+  `create` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+/* 蜘蛛配置主表 */
+DROP TABLE IF EXISTS `spidermajor`;
+
+CREATE TABLE `spidermajor` (
+  `id` BIGINT(42) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(128) DEFAULT NULL,
+  `create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `description` VARCHAR(1024) DEFAULT NULL,
+  `urldemo` VARCHAR(1024) DEFAULT NULL,
+  `thread` INT(11) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=338653236275757057 DEFAULT CHARSET=utf8;
+
+/* 蜘蛛配置主表数据 */
+
+INSERT  INTO `spidermajor`(`id`,`name`,`create`,`description`,`urldemo`,`thread`) VALUES (1,'东方project','2022-07-22 13:15:18','爬全部东方project正作人物以及小图片','https://thwiki.cc/%E5%AE%98%E6%96%B9%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8',1),(338649752176476160,'测试csdn爬取博客','2022-07-23 03:53:13','两个字段','https://blog.csdn.net/OneFlow_Official/article/details/125904049',1);
+
+/* 蜘蛛配置次表 */
+DROP TABLE IF EXISTS `spiderminor`;
+
+CREATE TABLE `spiderminor` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `_mid` BIGINT(42) DEFAULT NULL,
+  `_key` VARCHAR(32) DEFAULT NULL,
+  `description` VARCHAR(1024) DEFAULT NULL,
+  `xpath` VARCHAR(1024) DEFAULT NULL,
+  `selector` VARCHAR(1024) DEFAULT NULL,
+  `attr` VARCHAR(128) DEFAULT NULL,
+  `links` TINYINT(1) DEFAULT '0',
+  `addLinks` TINYINT(1) DEFAULT '0',
+  `regex` VARCHAR(1024) DEFAULT NULL,
+  `isAll` TINYINT(1) DEFAULT '0',
+  `xpathFunction` VARCHAR(1024) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+
+/* 蜘蛛配置次表数据 */
+
+INSERT  INTO `spiderminor`(`id`,`_mid`,`_key`,`description`,`xpath`,`selector`,`attr`,`links`,`addLinks`,`regex`,`isAll`,`xpathFunction`) VALUES (8,1,'name','人物名称','//*[@id=\"chara-list\"]/div[3]/div[@data-tag=\'正作游戏\']/div[1]/div[2]/a',NULL,NULL,0,0,NULL,1,'text()'),(9,1,'nickname','外号','//*[@id=\"chara-list\"]/div[3]/div[@data-tag=\'正作游戏\']/@data-nickname',NULL,NULL,0,0,NULL,1,''),(10,1,'link','人物详情链接','//*[@id=\"chara-list\"]/div[3]/div[@data-tag=\'正作游戏\']/div[1]/div[1]/a/@href',NULL,NULL,0,0,NULL,1,NULL),(11,1,'img','人物图片','//*[@id=\"chara-list\"]/div[3]/div[@data-tag=\'正作游戏\']/div[1]/div[1]/a/img/@v-lazy',NULL,NULL,0,0,NULL,1,NULL),(12,1,'description','人物描述','//*[@id=\"chara-list\"]/div[3]/div[@data-tag=\'正作游戏\']/div[4]',NULL,NULL,0,0,NULL,1,'text()'),(14,338649752176476160,'title','博客标题','//*[@id=\"articleContentId\"]','','',0,0,'',0,'text(0)'),(15,338649752176476160,'article','博客作者','//*[@id=\"mainBox\"]/main/div[1]/div[1]/div/div[2]/div[1]/div/a[1]','','',0,0,'',0,'text(0)');
+</code>
+</pre>
+                                <li>
+                                    <p class="mb-10">2、修改
+                                        <mark>application-loc</mark>
+                                        文件以下的配置项，这个是本地启动的配置：
+                                    </p>
+                                </li>
+                                <pre data-simplebar="" class="code-box"> <button class="copy-btn">复制</button><code>.....
+################ redis配置 ######
+  redis:
+    host: 您的redis的地址
+    port: 端口号
+    password: 您的redis的密码
+
+################ mysql配置，必须配置，否则无法启动 ########
+  datasource:
+    url: 数据库url
+    username: 用户名
+    password: 密码
+    db-name: 数据库名,可不填
+    driverClassName: 数据库驱动
+
+################ zqservice配置 #######################
+zqApiStore:
+  # ZQ网关统一上传文件路径（已弃用）
+  fileUploadPath: E:\\baby_img
+  isAuth: false
+zqServer:
+  # 本服务的IP或者你本地的IP
+  ip: 127.0.0.1
+  # 注册中心所在地址，注意，如果你没有启动本地注册中心，直接使用我的注册中心
+  centerAddr: http://150.158.28.40:8801/service
+  # 服务注册用户名，可以替换为任意，用下面这个的话，标志所有用户均可调用，如果你不希望在注册中心注册的服务被调用，请随意更改。
+  userName: zhangqi
+  # 服务注册密码
+  password: 123456
+  # 服务注册是否总是重试，该参数为true时，配置的重试次数将不起作用
+  alwaysRetry: false
+  # 服务注册重试次数，仅当服务注册alwaysRetry为false时生效
+  retryCount: 10
+  # 服务注册重试间隔/ms
+  retryTime: 10000
+
+zqServerCenter:
+  # 注册中心路径，同上
+  addr: http://150.158.28.40:8801/service
+
+zqClient:
+  # 服务调用用户名，要调用其他服务需要验证授权
+  userName: zhangqi
+  # 服务调用密码
+  password: 123456
+  # 注册中心所在地址
+  centerAddr: http://150.158.28.40:8801/service
+  # 统一权限服务地址
+  authAddr: http://150.158.28.40:8804/service
+
+# redis博客爬虫缓存时间/s
+zqRedis:
+  csdnBlogTimeout: 60
+
+# 索引库位置，必须为该配置配置一个存在的文件夹。该文件夹是用来保存爬取的链接和关键字的。
+lucene:
+  spiderIndex: D:\\index
+                                </code></pre>
+                                <li>
+                                    <p class="mb-10">3、尝试启动项目，出现图示打印的内容则表示启动成功，如果你注册中心地址写错，之后会一直重试并报错，报错不影响使用。
+                                        如果启动不了，请<a href="contact.html" class="ticket" target="_blank">联系我。</a>
+                                        <a href="http://hoppinzq.com/spider/picture/pp3.png" class="img-light"
+                                           rel="lightbox"><img src="http://hoppinzq.com/spider/picture/pp3.png" alt=""/></a></p>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div id="layout-theme" class="pt-30">
+                            <div class="doc-title">
+                                <h2>内置页面</h2>
+                            </div>
+                            <p class="mb-30" id="layout">
+                                下面是本项目的一些内置的页面的地址，ip默认是127.0.0.1，端口号默认是8806
+                            </p>
+
+                            <div class="example-box mt-30">
+                                <ul class="unordered-list">
+                                    <li>首页:http://127.0.0.1:8806</li>
+                                    <li>首页:http://127.0.0.1:8806/index.html</li>
+                                    <li>文档:http://127.0.0.1:8806/documentation.html</li>
+                                    <li>内置zwagger:http://127.0.0.1:8806/zwagger.html</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="content pt-30 pb-20">
+                            <div class="doc-title">
+                                <h2>爬虫们</h2>
+                            </div>
+                            <p>下面简单介绍一些爬虫和实现细节</p>
+
+                            <div class="article-list mt-30">
+                                <ul>
+                                    <li><a href="#pcn"><i class="lni lni-notepad"></i> 原生</a></li>
+                                    <li><a href="#spider"><i class="lni lni-notepad"></i> 蜘蛛</a></li>
+                                    <li><a href="#webmagic"><i class="lni lni-notepad"></i> webMagic</a></li>
+                                    <li><a href="#youget"><i class="lni lni-notepad"></i> you-get</a></li>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div id="pcn" class="pt-30">
+                            <div class="doc-title">
+                                <h2>爬虫的原生实现</h2>
+                            </div>
+                            <p class="mb-30">
+                                爬虫的原理非常简单，获取网页内容然后收集需要的数据。之所以提起爬虫就想到python，是因为python是一门很容易上手的脚本语言，体量小，有天然的库帮我们模拟
+                                HTTP请求。当我们知道爬虫的实现细节的时候，语言的选择并不是很关键了。就像算法一样，重要是思路。
+                            </p>
+                            <ol class="mb-30" style="list-style: auto; padding-left: 20px;">
+                                <li>
+                                    <p class="mb-10">
+                                        1、模拟HTTP请求，这个现有的类库就特别多了，你甚至可以自己写一套（见com.hoppinzq.service.html.HTTP）,你需要了解tcp，Socket，GetPost请求。</p>
+                                </li>
+                                <li>
+                                    <p class="mb-10">2、收集需要的数据，就是解析html，你有三种想法可以解析：</p>
+                                </li>
+                                <div class="box">
+                                    <div class="example-box">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="tab-style-1">
+                                                    <nav class="nav" id="nav-tab1">
+                                                        <button class="active" id="tab-1-1" data-bs-toggle="tab"
+                                                                data-bs-target="#tabContent-1-1">
+                                                            正则表达式
+                                                        </button>
+                                                        <button id="tab-1-2" data-bs-toggle="tab"
+                                                                data-bs-target="#tabContent-1-2">
+                                                            CSS选择器
+                                                        </button>
+                                                        <button id="tab-1-3" data-bs-toggle="tab"
+                                                                data-bs-target="#tabContent-1-3">
+                                                            XPath
+                                                        </button>
+                                                    </nav>
+                                                    <div class="tab-content" id="nav-tabContent11">
+                                                        <div class="tab-pane fade show active" id="tabContent-1-1">
+                                                            <p>
+                                                                正则表达式是最常用的，但是技术含量要求高，需要你熟悉正则表达式的语法，使用它来匹配标签是再好不过的了，
+                                                                大家可以看com.hoppinzq.service.util.GetWeb代码来了解其工作原理。
+                                                            </p>
+                                                            <a class="ticket"
+                                                               href="http://150.158.28.40:8090/baseFile/downloadFile/9e147c17671144fb88ed5c6f7a6908b1">点击该处下载源码。</a>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tabContent-1-2">
+                                                            <p>
+                                                                Css选择器语法很简单，也能准确选到需要爬取的内容或者选多个内容，这需要你写一个解析器去解析HTML（见com.hoppinzq.service.html.*）
+                                                            </p>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tabContent-1-3">
+                                                            <p>
+                                                                我们知道html实际是XML，XPath即为XML路径语言（XML Path
+                                                                Language），它是一种用来确定XML文档中某部分位置的语言，并自带一些函数。现在爬虫库都能解析XPath语法，
+                                                                这应该我们爬虫爬取想要的数据的首选。<a href="index.html?key=xpath"
+                                                                                     target="_blank" class="ticket">更多请访问</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ol>
+
+                        </div>
+
+
+                        <div id="spider" class="pt-30">
+                            <div class="doc-title">
+                                <h2>蜘蛛</h2>
+                            </div>
+                            <p class="mb-30">
+                                关于蜘蛛的开源项目很少，幸运的是，你看到了这里。首先这个蜘蛛不是普通的爬虫，而是全自动化只爬链接和提取关键字的爬虫，类似于百度蜘蛛、谷歌这些服务于搜索引擎的爬虫
+                                它比较于普通爬虫只抓取链接和抓取关键字并将抓取的链接继续加入工作。同时要保证已抓取的链接不会再次被抓取（我使用的布隆过滤器）。。。。。。
+                            </p>
+                            <p class="mb-30">
+                                下面就来教一下大家如何使用我的蜘蛛：
+                            </p>
+                            <ol class="mb-30" style="list-style: auto; padding-left: 20px;">
+                                <li>
+                                    <p class="mb-10">1、新建一个WorkerDemo类并实现ISpiderReportable接口。</p>
+                                </li>
+                                <pre data-simplebar="" class="code-box"><button class="copy-btn">复制</button><code>public interface ISpiderReportable {
+
+    boolean foundInternalLink(String url);
+
+    boolean foundExternalLink(String url);
+
+    boolean foundOtherLink(String url);
+
+    void processPage(HTTP http);
+
+    void completePage(HTTP http, boolean isE);
+
+    boolean getRemoveQuery();
+
+    void spiderComplete();
+}
+</code>
+</pre>
+                                <li>
+                                    <p class="mb-10">2、WorkerDemo类内重写以下方法。</p>
+                                </li>
+                                <div class="box">
+                                    <div class="example-box">
+                                        <div class="explanations">
+                                            <div class="single-explanation gray">
+                                                <div class="content">
+                                                    <h4>boolean foundInternalLink(String url);</h4>
+                                                    <p>该方法会在发现<span class="fw-bold">内部连接（域名Domain相同）</span>时调用，其中url表示蜘蛛服务在解析网页发现的URL，
+                                                        若返回true则将该链接继续加入解析中，否则不加入。通过实现该方法，你可以筛选要加入解析的url，也可以加布隆过滤器筛选url。
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="single-explanation gray">
+                                                <div class="content">
+                                                    <h4>boolean foundExternalLink(String url);</h4>
+                                                    <p>该方法会在发现<span class="fw-bold">外部连接（域名Domain不同）</span>时调用，其中url表示蜘蛛服务在解析网页发现的URL，
+                                                        若返回true则将该链接继续加入解析中，否则不加入。通过实现该方法，你可以配置一个白名单黑名单，以过滤一些网站。</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-explanation gray">
+                                                <div class="content">
+                                                    <h4>boolean foundOtherLink(String url);</h4>
+                                                    <p>该方法会在发现<span class="fw-bold">其他链接如锚链接、email、FTP等链接</span>时调用，其中url表示蜘蛛服务在解析网页发现的URL，
+                                                        若返回true则将该链接继续加入解析中，否则不加入。建议直接返回false。</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-explanation gray">
+                                                <div class="content">
+                                                    <h4>void processPage(HTTP http);</h4>
+                                                    <p>
+                                                        该方法会在处理每一个网页时调用，其中你可以通过http从中获得网页的信息。通过实现该方法，以解析链接的网页。你也可以额外获取网页的其他信息而并非只获取链接信息和关键字。</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-explanation gray">
+                                                <div class="content">
+                                                    <h4>void completePage(HTTP http, boolean isE);</h4>
+                                                    <p>
+                                                        该方法会在处理完成（无论成功失败）一个网页时调用，isE参数是在处理网页是是否出现错误。通过重写该方法你可以将处理成功的网页加入数据库或者是记录解析失败的网页，以便执行其他操作。</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-explanation gray">
+                                                <div class="content">
+                                                    <h4>boolean getRemoveQuery();</h4>
+                                                    <p>确定url上的查询字符串是否应删除，也就是url带的?key=value这种，通常返回true即可。</p>
+                                                </div>
+                                            </div>
+                                            <div class="single-explanation gray">
+                                                <div class="content">
+                                                    <h4>void spiderComplete();</h4>
+                                                    <p>爬虫完成所有工作后（队列）会调用该方法，通过重写该方法以自定义爬虫工作完成后要执行的操作。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <li>
+                                    <p class="mb-10">
+                                        3、开始工作（你可以参照com.hoppinzq.service.work.Worker，解析html参照com.hoppinzq.service.work.HTMLParse）：</p>
+                                </li>
+                                <pre data-simplebar="" class="code-box"><button class="copy-btn">复制</button><code>public static void main(String[] args) {
+    try {
+        String url = "入口url";
+        IWorkloadStorable wl = new SpiderInternalWorkload();
+        WorkerDemo worker=new WorkerDemo();
+        Spider _spider
+            = new Spider(worker, url,
+            new HTTPSocket(), 100, wl);
+        _spider.setMaxBody(100);
+        _spider.start();
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }
+}
+</code>
+</pre>
+                                <li>
+                                    <p class="mb-10">
+                                        4、开始爬爬爬，相关接口如下<a href="http://hoppinzq.com/spider/picture/pp4.png" class="img-light"
+                                                         rel="lightbox"><img src="http://hoppinzq.com/spider/picture/pp4.png" alt=""/></a>
+                                    </p>
+                                </li>
+                                <pre data-simplebar="" class="code-box"><button class="copy-btn">复制</button><code>http://127.0.0.1:8806/hoppinzq?method=startWork&amp;params={"url":"要爬取的网站url"}</code></pre>
+
+                                <li>
+                                    <p class="mb-10">
+                                        5、爬虫结束工作时会入库spider表内，表内isIndex为0的表示未加入索引库，需要你手动调用接口将其加入索引库。见<a
+                                            href="http://127.0.0.1:8806/zwagger.html" target="_blank" class="ticket">zwagger文档 </a>的数据库入索引库接口（下面那个就是）
+                                    </p>
+                                </li>
+                                <pre data-simplebar="" class="code-box"><button class="copy-btn">复制</button><code>http://127.0.0.1:8806/hoppinzq?method=sqltoindex&amp;params={}</code></pre>
+                                <li>
+                                    <p class="mb-10">
+                                        6、本项目使用了Lucene作为搜索引擎，关于Lucene你可以看我<a
+                                            href="http://1.15.232.156/blog/275357182902452220" target="_blank"
+                                            class="ticket">相当敷衍的博客</a>
+                                        。数据一旦被加入到索引库，就可以使用相关接口查询了。</p>
+                                    <pre data-simplebar="" class="code-box"><button class="copy-btn">复制</button><code>http://127.0.0.1:8806/hoppinzq?method=queryweb&amp;params={"search":"关键字"}</code></pre>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div id="webmagic" class="pt-20">
+                            <div class="doc-title">
+                                <h2>webMagic</h2>
+                            </div>
+                            <div class="box" id="default-buttons">
+                                <p class="mb-10">
+                                    WebMagic是一个简单灵活的Java爬虫框架。基于WebMagic，你可以快速开发出一个高效、易维护的爬虫。<a
+                                        href="http://webmagic.io/" class="ticket" target="_blank">官网</a>
+                                </p>
+                                <h5 class="mb-10 mt-20"> 特性</h5>
+                                <ol class="mb-30" style="list-style: auto; padding-left: 20px;">
+                                    <li>
+                                        <p class="mb-10">1、简单的API，可快速上手。</p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">2、模块化的结构，可轻松扩展。</p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">3、提供多线程和分布式支持。</p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">4、注解驱动开发。</p>
+                                    </li>
+                                </ol>
+                                <p class="mb-10">一个示例：</p>
+                                <pre data-simplebar="" class="code-box"><button class="copy-btn">复制</button><code>
+public class GithubRepoPageProcessor implements PageProcessor {
+
+    private Site site = Site.me().setRetryTimes(3).setSleepTime(1000).setTimeOut(10000);
+
+    @Override
+    public void process(Page page) {
+        page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/[\\w\\-]+/[\\w\\-]+)").all());
+        page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/[\\w\\-])").all());
+        page.putField("author", page.getUrl().regex("https://github\\.com/(\\w+)/.*").toString());
+        page.putField("name", page.getHtml().xpath("//h1[@class='entry-title public']/strong/a/text()").toString());
+        if (page.getResultItems().get("name")==null){
+            //skip this page
+            page.setSkip(true);
+        }
+        page.putField("readme", page.getHtml().xpath("//div[@id='readme']/tidyText()"));
+    }
+
+    @Override
+    public Site getSite() {
+        return site;
+    }
+
+    public static void main(String[] args) {
+        Spider.create(new GithubRepoPageProcessor()).addUrl("https://github.com/code4craft").thread(5).run();
+    }
+}
+                    </code>
+                    </pre>
+                                <h5 class="mb-10 mt-20"> 下载</h5>
+                                <p class="mb-10">最新版：<a
+                                        href="https://github.com/code4craft/webmagic/releases/tag/WebMagic-0.7.3"
+                                        target="_blank" class="ticket">WebMagic-0.7.3</a></p>
+                                <p class="mb-10">Maven依赖：</p>
+                                <pre data-simplebar="" class="code-box"><button class="copy-btn">复制</button><code>
+&lt;dependency&gt;
+    &lt;groupId&gtus.codecraft&lt;/groupId&gt;
+    &lt;artifactId&gtwebmagic-core&lt;/artifactId&gt;
+    &lt;version&gt0.7.3&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;us.codecraft&lt;/groupId&gt;
+    &lt;artifactId&gt;webmagic-extension&lt;/artifactId&gt;
+    &lt;version&gt;0.7.3&lt;/version&gt;
+&lt;/dependency&gt;
+                    </code>
+                    </pre>
+                                <h5 class="mb-10 mt-20"> 文档</h5>
+                                <ol class="mb-30" style="list-style: auto; padding-left: 20px;">
+                                    <li>
+                                        <p class="mb-10">1、中文: <a class="ticket" target="_blank"
+                                                                  href="http://webmagic.io/docs/zh/">http://webmagic.io/docs/zh/</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">2、English: <a class="ticket" target="_blank"
+                                                                       href="http://webmagic.io/docs/en">http://webmagic.io/docs/en</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">3、Javadocs: <a class="ticket" target="_blank"
+                                                                        href="http://webmagic.io/apidocs/">http://webmagic.io/apidocs/</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">4、0.6.1版文档: <a class="ticket" target="_blank"
+                                                                        href="http://webmagic.io/archive/docs/0.6.1">http://webmagic.io/archive/docs/0.6.1</a>
+                                        </p>
+                                    </li>
+                                </ol>
+                                <h5 class="mb-10 mt-20"> 源码</h5>
+                                <ol class="mb-30" style="list-style: auto; padding-left: 20px;">
+                                    <li>
+                                        <p class="mb-10">1、Github: <a class="ticket" target="_blank"
+                                                                      href="https://github.com/code4craft/webmagic">https://github.com/code4craft/webmagic</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="mb-10">2、开源中国: <a class="ticket" target="_blank"
+                                                                    href="https://git.oschina.net/flashsword20/webmagic">https://git.oschina.net/flashsword20/webmagic</a>
+                                        </p>
+                                    </li>
+                                </ol>
+
+                            </div>
+                        </div>
+
+
+                        <div id="youget" class="pt-30">
+                            <div class="doc-title">
+                                <h2>you-get
+                                </h2>
+                            </div>
+                            <div class="box">
+                                <p class="mb-10">you-get 是一个跨平台命令行视频、音频与图像下载工具，支持国内外常用的各种多媒体网站。
+                                    安装过程在<a href="#installation" class="ticket">前面</a></p>
+                                <div class="box">
+                                    <h5 class="text-medium">支持的<span class="fw-bold">国内网站</span></h5>
+                                    <div class="example-box">
+                                        <div class="table-wrapper table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <h6>网站</h6>
+                                                        </th>
+                                                        <th>
+                                                            <h6>URL</h6>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>哔哩哔哩</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://www.bilibili.com">http://www.bilibili.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>优酷</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://www.youku.com">http://www.youku.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>腾讯视频</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://v.qq.com">http://v.qq.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>爱奇艺</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://www.iqiyi.com">http://www.iqiyi.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>央视网</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://www.cntv.cn">http://www.cntv.cn</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>芒果TV</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://www.mgtv.com">http://www.mgtv.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>快手</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="https://www.kuaishou.com">https://www.kuaishou.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>抖音</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="https://www.douyin.com">https://www.douyin.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>西瓜视频</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="https://www.ixigua.com">https://www.ixigua.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>百度贴吧</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="https://tieba.baidu.com">https://tieba.baidu.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>豆瓣</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://www.douban.com">http://www.douban.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>斗鱼</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://www.douyutv.com">http://www.douyutv.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>凤凰视频</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://v.ifeng.com">http://v.ifeng.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>风行网</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://www.fun.tv">http://www.fun.tv</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>激动网</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://www.joy.cn">http://www.joy.cn</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>酷6网</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://www.ku6.com">http://www.ku6.com</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>新浪视频</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://video.sina.com.cn">http://video.sina.com.cn</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="min-width">
+                                                            <p>搜狐视频</p>
+                                                        </td>
+                                                        <td class="min-width">
+                                                            <a class="ticket" target="_blank" href="http://tv.sohu.com">http://tv.sohu.com</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <h5 class="text-medium">使用命令</h5>
+                                    <div class="example-box">
+                                        <div class="table-wrapper table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th>
+                                                        <h6>选项</h6>
+                                                    </th>
+                                                    <th>
+                                                        <h6>说明</h6>
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td class="min-width">
+                                                        <p>-i</p>
+                                                    </td>
+                                                    <td class="min-width">
+                                                        <p>显示资源信息，比如说格式、清晰度、大小等</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="min-width">
+                                                        <p>-u</p>
+                                                    </td>
+                                                    <td class="min-width">
+                                                        <p>指定下载或查看的url，有时候可以省略-u直接加上url</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="min-width">
+                                                        <p>-o</p>
+                                                    </td>
+                                                    <td class="min-width">
+                                                        <p>设置输出文件夹，即保存路径，若不指定，则保存在当前工作目录</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="min-width">
+                                                        <p>-O</p>
+                                                    </td>
+                                                    <td class="min-width">
+                                                        <p>设置文件名，可采用默认文件名</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="min-width">
+                                                        <p>-f</p>
+                                                    </td>
+                                                    <td class="min-width">
+                                                        <p>强制覆盖已存在的文件</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="min-width">
+                                                        <p>-l</p>
+                                                    </td>
+                                                    <td class="min-width">
+                                                        <p>优先下载整个列表</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="min-width">
+                                                        <p>-p</p>
+                                                    </td>
+                                                    <td class="min-width">
+                                                        <p>使用密码（若访问视频需要密码）</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="min-width">
+                                                        <p>-t</p>
+                                                    </td>
+                                                    <td class="min-width">
+                                                        <p>设置超时时间，单位是秒</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="min-width">
+                                                        <p>-c</p>
+                                                    </td>
+                                                    <td class="min-width">
+                                                        <p>使用cookie，加载cookies.txt 或者cookies.sqlite</p>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="mb-10">通过python 简单调用you-get库</p>
+                                <pre data-simplebar="" class="code-box"><button class="copy-btn">复制</button><code>
+# ！/usr/bin/env python
+# -*-coding:utf-8-*-
+import sys
+import you_get
+
+
+def download(url, path):
+    sys.argv = ['you-get', '-o', path, url]
+    you_get.main()
+
+
+if __name__ == '__main__':
+    # 视频网站的地址
+    url = 'https://www.bilibili.com/video/BV1d44y177CH'
+    # 视频输出的位置
+    path = 'D:/test'
+    download(url, path)
+                    </code>
+                    </pre>
+                             <p class="mb-10">当然我们是个java项目，我们如何执行python代码呢？Tomcat的一段源码让我十分受用<mark>Runtime.getRuntime().exec("cmd /c start http://127.0.0.1:" + port + "/")</mark>，我们以前用Tomcat启动web项目
+                                的时候会发现浏览器会自动打开并跳转到WEB-INF指定的网页，它就是通过Runtime调出控制台然后打开网页，系统会自动调出默认浏览器并跳转。那我们可以通过java调出cmd，并执行一些指令，然后解析字符串。这很危险，但是是一个不错的想法。我们现在控制台执行一些基本的指令看看怎么打印的吧。
+                                <div class="hotspots-content">
+                                    <button type="button" class="tooltip-button" style="left: 31.5%;top: 1.5%;" data-bs-toggle="tooltip"
+                                            data-bs-placement="top"
+                                            title="通过--info获取一些基本信息：清晰度，格式，大小，下载指令">
+                                    </button>
+                                    <button type="button" class="tooltip-button" style="left: 31.5%;top: 25.5%;" data-bs-toggle="tooltip"
+                                            data-bs-placement="top"
+                                            title="通过--json获取更详细信息，下载地址有了">
+                                    </button>
+                                    <button type="button" class="tooltip-button " style="left: 45.8%;bottom: 27.5%;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="通过--format指定清晰度，-o指定下载位置，-O指定下载的文件名，--force 强制覆盖已下载的，来下载视频">
+                                    </button>
+                                <button type="button" class="tooltip-button " style="left: 24.8%;bottom: 2%;"
+                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="这个.cmt.xml是B站的弹幕文件，也可以解析">
+                                </button>
+                                <a href="http://hoppinzq.com/spider/picture/pp5.png" class="img-light"
+                                   rel="lightbox"><img src="http://hoppinzq.com/spider/picture/pp5.png" alt=""/></a>
+                            </div>
+                                </p>
+                                <p class="mb-10">最后的工作就是硬解析字符串了，下载的进度需要我们通过WebSocket实时传给前端，OK。</p>
+
+                            </div>
+                        <div class="content pt-30 pb-10">
+                            <div class="doc-title">
+                                <h2>其他</h2>
+                            </div>
+                            <p>emmm...其他的一些东西</p>
+
+                            <div class="article-list mt-30">
+                                <ul>
+                                    <li><a href="#changelog"><i class="lni lni-notepad"></i> 日志</a></li>
+                                    <li><a href="#credits"><i class="lni lni-notepad"></i> 鸣谢</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div id="changelog" class="pt-30 changelog">
+                            <div class="doc-title">
+                                <h2>日志</h2>
+                            </div>
+                            <div class="example-box mt-30">
+                                <div class="single-changelog">
+                                    <div class="log-subject new">
+                                        <div class="content">
+                                            <i class="lni lni-highlight-alt"></i>
+                                            <span>起因</span>
+                                        </div>
+                                    </div>
+                                    <div class="log-content">
+                                        <h5 class="title">框架的诞生</h5>
+                                        <span class="date">Long long age</span>
+                                        <p>很久之前我的短视频网站就有使用爬虫，可以将bilibili的视频直接爬到我的网站，当时使用的python，搞了个歪招集成在Java项目里。之后我的<a class="ticket" href="http://1.15.232.156/">博客项目</a>也使用了爬虫,在写博客的页面那里。
+                                            初衷是方便我把csdn和博客园的博客导入到我的博客里，就使用webmagic框架写了三个爬虫，分别针对csdn、博客园、微信公众号。最后就想把这些爬虫集合在一起，每天搞一点。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="single-changelog">
+                                    <div class="log-subject new">
+                                        <div class="content">
+                                            <i class="lni lni-folder"></i>
+                                            <span>起因</span>
+                                        </div>
+                                    </div>
+                                    <div class="log-content">
+                                        <h5 class="title">找原型</h5>
+                                        <span class="date">2022-07-15</span>
+                                        <p>确定基本骨架和功能，
+                                        </p>
+                                        <ol class="ordered-list mt-25" style="list-style: auto; padding-left: 20px;">
+                                            <li>新增逻辑前端实现</li>
+                                            <li>重置以前的三个接口</li>
+                                            <li>Lucene的再学习</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="single-changelog">
+                                    <div class="log-subject bug-fix">
+                                        <div class="content">
+                                            <i class="lni lni-bug"></i>
+                                            <span>bug</span>
+                                        </div>
+                                    </div>
+                                    <div class="log-content">
+                                        <h5 class="title">页面的n多问题</h5>
+                                        <span class="date">2022-07-20</span>
+                                        <p>修复了在微信打开，因微信自动增强网页造成的重大bug。本来没想做移动端的，但我觉得很多人还是喜欢在微信直接打开。</p>
+                                    </div>
+                                </div>
+                                <div class="single-changelog">
+                                    <div class="log-subject new">
+                                        <div class="content">
+                                            <i class="lni lni-move"></i>
+                                            <span>移动端</span>
+                                        </div>
+                                    </div>
+                                    <div class="log-content">
+                                        <h5 class="title">响应式开发</h5>
+                                        <span class="date">2022-07-20</span>
+                                        <p>已经完成了基本的页面，并为移动端适配
+                                        </p>
+                                        <p>文档模块的框架开发完成
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="single-changelog">
+                                    <div class="log-subject new">
+                                        <div class="content">
+                                            <i class="lni lni-smile"></i>
+                                            <span>后台</span>
+                                        </div>
+                                    </div>
+                                    <div class="log-content">
+                                        <h5 class="title">蜘蛛集成</h5>
+                                        <span class="date">2022-07-21</span>
+                                    </div>
+                                </div>
+                                <div class="single-changelog">
+                                    <div class="log-subject new">
+                                        <div class="content">
+                                            <i class="lni lni-happy"></i>
+                                            <span>后台</span>
+                                        </div>
+                                    </div>
+                                    <div class="log-content">
+                                        <h5 class="title">webmagic集成</h5>
+                                        <span class="date">2022-07-22</span>
+                                        <p>主要功能基本实现
+                                        </p>
+                                        <ol class="ordered-list mt-25" style="list-style: auto; padding-left: 20px;">
+                                            <li>完成了爬虫配置的增删改查</li>
+                                            <li>现在爬虫可以根据配置自动工作</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="single-changelog">
+                                    <div class="log-subject new">
+                                        <div class="content">
+                                            <i class="lni lni-cool"></i>
+                                            <span>后台</span>
+                                        </div>
+                                    </div>
+                                    <div class="log-content">
+                                        <h5 class="title">you-get集成</h5>
+                                        <span class="date">2022-07-23</span>
+                                        <p>最强功能实现
+                                        </p>
+                                        <ol class="ordered-list mt-25" style="list-style: auto; padding-left: 20px;">
+                                            <li>Java与Python的通信</li>
+                                            <li>实现了WebSocket实时展示爬取和下载进度</li>
+                                            <li>后台部署项目，前端上CDN，完工</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="credits" class="credit pt-30">
+                            <div class="doc-title">
+                                <h2>鸣谢</h2>
+                            </div>
+                            <ul class="credit-list">
+                                <li>
+                                    <a href="https://www.bootcss.com/" target="_blank">
+                                        Bootstrap
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.csdn.net/" target="_blank">
+                                        CSDN
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.bilibili.com/" target="_blank">
+                                        哔哩哔哩
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://thwiki.cc/%E9%A6%96%E9%A1%B5" target="_blank">
+                                        thwiki
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://sc.chinaz.com/" target="_blank">
+                                        站长之家
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.icourses.cn/home/#" target="_blank">
+                                        爱课程
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.runoob.com/" target="_blank">
+                                        菜鸟教程
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://webmagic.io/" target="_blank">
+                                        webmagic
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://cloud.tencent.com/" target="_blank">
+                                        腾讯云
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-12">
+
+                <div class="footer-content">
+                    <div class="logo">
+                        <a href="javascript:void(0)">
+                            <img src="http://hoppinzq.com/static/images/logo/1640338711_113639.png" alt="logo">
+                        </a>
+                    </div>
+                    <p>如果觉得该文档很有帮助，可通过一下方式联系我！Enjor coding！</p>
+                    <ul class="social">
+                        <li><a href="https://gitee.com/hoppin"><i class="lni lni-github-original"></i></i></a></li>
+                        <li><a href="javascript:void(0)" title="HOPPIN_HAZZ"><i class="lni lni-wechat"></i></a></li>
+                        <li><a href="tel:15028582175"><i class="lni lni-phone"></i></a></li>
+                        <li><a href="mailto:anmiezata@163.com"><i class="lni lni-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p><a target="_blank" href="https://beian.miit.gov.cn/">Copyright © HOPPINZQ.
+                        ICP主体备案号:鲁ICP备2021023310号</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<a href="#" class="scroll-top">
+    <i class="lni lni-chevron-up"></i>
+</a>
+<script src="/static/config.js"></script>
+<script src="http://hoppinzq.com/spider/js/jquery.min.js"></script>
+<script src="http://hoppinzq.com/spider/js/popper.min.js"></script>
+<script src="http://hoppinzq.com/spider/js/bootstrap.min.js"></script>
+<script src="http://hoppinzq.com/spider/js/simple-bar.js"></script>
+<script src="http://hoppinzq.com/static/js/plugins/lightbox-2.6.min.js"></script>
+<!--<script src="http://hoppinzq.com/static/js/plugins/eruda.js"></script>-->
+
+<script src="/static/js/doc.js"></script>
+</body>
+</html>

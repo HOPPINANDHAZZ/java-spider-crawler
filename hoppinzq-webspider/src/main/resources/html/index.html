@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>HOPPIN爬虫</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/LineIcons.3.0.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/static/css/plugins/lightbox.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/spider.css">
+
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/simple-bar.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/animate.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/main.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/cPager.css">
+    <link rel="stylesheet" href="http://hoppinzq.com/spider/css/footer.css">
+
+</head>
+<style>
+    .footer-menu-items{
+        margin-bottom: 5px;
+    }
+    textarea.form-control {
+        border-radius: 10px;
+    }
+    .form-control:not(select) {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    textarea.form-control {
+        height: auto;
+    }
+    .form-control {
+        border-radius: 5px;
+        box-shadow: none;
+        border-color: #86a4c3;
+        height: auto;
+    }
+</style>
+<body>
+
+
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+
+
+<header class="header navbar-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="nav-inner">
+
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="">
+                            <img src="http://hoppinzq.com/static/images/logo/1640338711_113639.png" alt="Logo">
+                        </a>
+                        <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a href="" class="active" aria-label="Toggle navigation">首页</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="documentation.html" aria-label="Toggle navigation">文档</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="contact.html" aria-label="Toggle navigation">建议</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="button">
+                            <a href="add.html" class="btn">创建一个爬虫 <i class="lni lni-circle-plus"></i></a>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="hero-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="hero-content">
+                    <h2>这是什么东西?</h2>
+                    <p>这是一套爬虫可视化配置框架，拥有对爬虫增删改查和自动生成爬虫代码的能力。其次，它还可以爬取视频网站的视频；爬取网站的链接并生成快照，类似于“百度”。</p>
+                    <p>该项目内嵌了一只蜘蛛，可以在整个互联网大行其道，我只让其工作了很短的时间，快来搜搜吧。</p>
+                    <div class="search-form">
+                        <input type="text" id="key" placeholder="输入关键字">
+                        <button id="search">搜索</button>
+                    </div>
+                    <ul class="popular-tag">
+                        <li>你可能感兴趣的标签:</li>
+                        <li><a href="javascript:void(0)" onclick="searchWeb('Java')">Java</a></li>
+                        <li><a href="javascript:void(0)" onclick="searchWeb('Github')">Github</a></li>
+                        <li><a href="javascript:void(0)" onclick="searchWeb('Java连接MySQL')">Java连接数据库</a></li>
+                        <li><a href="javascript:void(0)" onclick="searchWeb('马克思')">马克思</a></li>
+                        <li><a href="javascript:void(0)" onclick="searchWeb('张宇高等数学')">张宇高等数学</a></li>
+                        <li><a href="javascript:void(0)" onclick="searchWeb('张祺是谁')">张祺是谁</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12" style="display:flex;justify-content: center">
+                <div class="hero-image">
+                    <div class="container-sp">
+                        <div class="oldweb"><svg class="spiderweb" xmlns="http://www.w3.org/2000/svg" width="500" height="500"
+                                                 viewBox="0 0 500 500" fill="none">
+                            <path
+                                    d="M477 146L466 183.301M410.5 371.5L402.095 376.311M410.5 371.5L405.924 377.5M410.5 371.5L411.057 378.032M410.5 371.5L418 372.561M410.5 371.5L418 362.39M410.5 371.5L414.629 357.5M196.5 494L223 478.831L225.5 477.4M320.5 489.5L327.746 480M499 264L495.707 268M463.5 379L460.5 378.575M427.752 313L436.156 284.5M427.752 313C427.912 324.91 430.708 345.329 440.484 335M427.752 313L420.969 336M441.5 333.845C441.153 334.266 440.814 334.651 440.484 335M441.5 333.845L453.721 319M441.5 333.845L429.847 348M436.156 284.5C437.354 301.657 442.8 332.266 455 317.446M436.156 284.5L445.003 254.5M455 317.446L453.721 319M455 317.446L466 304.085M445.003 254.5C447.498 276.5 455.45 316.9 467.305 302.5M445.003 254.5L455 220.602M467.305 302.5L466 304.085M467.305 302.5L480.888 286M455 220.602C458.416 248.734 468.622 300.9 482.123 284.5M455 220.602L466 183.301M482.123 284.5L495.707 268M482.123 284.5L480.888 286M466 183.301C471.034 215.47 483.329 275.104 494 269.488M495.707 268C495.144 268.694 494.574 269.185 494 269.488M376 391.249L355 403.27M376 391.249C379.868 394.143 383.5 397.5 393.339 394M376 391.249L388.5 384.093M395.437 391.249L383.5 406.9M395.437 391.249C395.085 391.71 391.578 396.5 393.339 394M395.437 391.249L399.5 386.5M355 403.27C361.983 407.78 376 411 383.5 406.9M355 403.27L340 411.856M383.5 406.9L371.602 422.5M383.5 406.9C387.863 412.433 402.095 420 414.295 416M340 411.856C348.869 417.588 363 422.5 371.602 422.5M340 411.856L317.039 425M371.602 422.5L369.695 425L357.492 441M371.602 422.5C378.068 430.667 399.441 439.5 416 436L414.295 416M317.039 425C328.489 433 348 443 357.492 441M317.039 425L297.822 436M357.492 441L343.381 459.5M357.492 441C365.119 445.93 383.387 455.233 395.437 453M297.822 436C311.136 446.289 325 458 343.381 459.5M297.822 436L273 450.209M343.381 459.5L327.746 480M343.381 459.5C348.588 463 361.7 469.5 372.5 467.5M273 450.209C288.96 463.139 300 475.5 327.746 480M273 450.209L246.288 465.5M327.746 480C329.997 481.5 335.3 484.3 338.5 483.5M246.288 465.5C260.692 475.667 286 495 296 495M246.288 465.5L225.5 477.4M225.5 477.4C231.667 483.766 246.6 497.1 257 499.5M440.484 335C440.822 345.208 442.1 367.76 444.5 376.311M444.5 376.311L460.5 378.575M444.5 376.311C440.425 387.374 428 400 412.888 399.5M444.5 376.311L431.5 374.472M453.721 319C453.712 333.717 455.056 366.236 460.5 378.575M460.5 378.575C452.363 394.084 436.5 415.5 414.295 416M466 304.085C466.667 320.89 467.305 351 474 360.5M480.888 286C481.759 298 480.888 321 486.5 329M494 269.488C493.471 274.492 493.073 286.3 495.707 293.5M412.888 399.5L414.295 416M412.888 399.5C405.924 401 395.318 397.667 393.339 394M412.888 399.5L411.992 389M388.5 384.093C390.46 385.364 395.453 388.025 399.5 386.5M388.5 384.093L396.5 379.514M399.5 386.5C400.848 388.5 405.186 391.4 411.992 389M399.5 386.5L403 381.5M411.992 389C412.888 388 428.5 387.443 431.5 374.472M411.992 389L411.395 382M431.5 374.472C430.398 369.481 428.524 357.2 429.847 348M431.5 374.472L424 373.41M429.847 348C427.71 349.167 422.944 348.4 420.969 336M429.847 348L418 362.39M420.969 336L417.43 348M417.43 348C418.287 350.667 420.6 355.9 423 355.5C422.833 361.607 422.8 373.739 424 373.41M417.43 348L414.629 357.5M424 373.41C422.93 376.607 418.912 382.8 411.395 382M424 373.41L418 372.561M411.395 382C409.93 383.119 405.8 385.242 403 381.5M411.395 382L411.057 378.032M403 381.5C401.388 381.95 398.231 381.525 396.5 379.514M403 381.5L405.924 377.5M396.5 379.514L402.095 376.311M402.095 376.311C402.512 376.874 403.863 377.9 405.924 377.5M405.924 377.5C406.487 378.251 408.303 379.409 411.057 378.032M411.057 378.032C413.038 378.063 417.2 377.01 418 372.561M418 372.561C417.667 369.708 417.2 363.8 418 363M418 362.39C416.752 362.093 414.331 360.7 414.629 357.5"
+                                    stroke="currentColor"></path>
+                        </svg></div>
+                        <div class="spider-container">
+                            <div class="spider">
+                                <div class="legs-left">
+                                    <div class="leg leg-1"></div>
+                                    <div class="leg leg-2"></div>
+                                    <div class="leg leg-3"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="eyes"></div>
+                                    <div class="mouth"></div>
+                                </div>
+                                <div class="legs-right">
+                                    <div class="leg leg-1"></div>
+                                    <div class="leg leg-2"></div>
+                                    <div class="leg leg-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-spider">WEBSITE</div>
+                    </div>
+<!--                    <img id="spiderImg" src="/static/picture/spider.jpg" alt="蜘蛛">-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container search-nr" style="height: 480px;display: none">
+    <p class="font-blod text-success sqzk" style="cursor:pointer;margin-left: 20px;">[收起]</p>
+    <ul id="listShow"></ul>
+    <div class="turn-page" id="pager"></div>
+</div>
+<section class="features section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h3 class="wow zoomIn" data-wow-delay=".2s">Features</h3>
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">特性</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".6s">下面列出了</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
+                <div class="single-featuer">
+                    <div class="service-icon">
+                        <i class="lni lni-angellist"></i>
+                    </div>
+                    <h3>极易操作</h3>
+                    <p>爬虫0基础但是想尝试一下的，或者没有相关经验但是有相关需求的。</p>
+                    <a href="#wbbb" class="more">尝试一下 <i class="lni lni-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
+                <div class="single-featuer">
+                    <div class="service-icon">
+                        <i class="lni lni-eye"></i>
+                    </div>
+                    <h3>全部可视化</h3>
+                    <p>通过可视化配置，你可以很简单地定制并生成你自己的爬虫接口。</p>
+                    <a href="add.html" class="more">开始配置 <i class="lni lni-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s">
+                <div class="single-featuer">
+                    <div class="service-icon">
+                        <i class="lni lni-folder"></i>
+                    </div>
+                    <h3>文档齐全</h3>
+                    <p>阅读文档以了解一些细节，你也可以根据文档指引，将本项目部署到本地。</p>
+                    <a href="documentation.html" class="more">查看文档 <i class="lni lni-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
+                <div class="single-featuer">
+                    <div class="service-icon">
+                        <i class="lni lni-search-alt"></i>
+                    </div>
+                    <h3>站内搜索</h3>
+                    <p>如果你写了一个网站但是想做一个搜索的功能，搜索需要跳转到相对应内容的网页上，那你就可以使用该项目提供的蜘蛛对你的首页入口
+                        进行爬取，蜘蛛会顺着首页对你页面所有链接进行解析并继续将这些链接加入工作。
+                    </p>
+                    <a href="#" class="more" id="tryL">尝试一下 <i class="lni lni-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
+                <div class="single-featuer">
+                    <div class="service-icon">
+                        <i class="lni lni-video"></i>
+                    </div>
+                    <h3>视频爬取</h3>
+                    <p>网上的视频网站要下载必须登录，或者就不让下载（bilibili）。通过该项目提供的爬虫可以高效的爬取视频详细信息和下载地址，并提供断点续传、合并视频等功能
+                    bilibili的视频合集也可以哦（视频在一个合集内）。</p>
+                    <a href="#wbbb" class="more" id="vitry">开始尝试 <i class="lni lni-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="demo-area section" id="wbbb">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h3 class="wow zoomIn" data-wow-delay=".2s">Demo</h3>
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">内部爬虫</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".6s">这些是我自己定制的爬虫，你可以尝试一下</p>
+                </div>
+            </div>
+        </div>
+        <div class="row wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;" >
+                <div class="col-lg-12">
+                    <div class="tab-style-2">
+                        <nav class="nav" id="nav-tab">
+                            <button class="active" id="tab-1-11" data-bs-toggle="tab" data-bs-target="#tabContent-1-11">
+                                <spna class="serial">1</spna>
+                                <span>CSDN</span>
+                            </button>
+                            <button id="tab-1-22" data-bs-toggle="tab" data-bs-target="#tabContent-1-22">
+                                <spna class="serial">2</spna>
+                                <span>微信公众号</span>
+                            </button>
+                            <button id="tab-1-33" data-bs-toggle="tab" data-bs-target="#tabContent-1-33">
+                                <spna class="serial">3</spna>
+                                <span>东方project</span>
+                            </button>
+                            <button id="tab-1-44" data-bs-toggle="tab" data-bs-target="#tabContent-1-44">
+                                <spna class="serial">4</spna>
+                                <span>静态资源爬虫</span>
+                            </button>
+                            <button id="tab-1-55" data-bs-toggle="tab" data-bs-target="#tabContent-1-55">
+                                <spna class="serial">5</spna>
+                                <span>视频爬虫</span>
+                            </button>
+                            <button id="tab-1-66" data-bs-toggle="tab" data-bs-target="#tabContent-1-66">
+                                <spna class="serial">6</spna>
+                                <span>用户配置的爬虫</span>
+                            </button>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent1">
+                            <div class="tab-pane fade show active" id="tabContent-1-11">
+                                <p>
+                                    1、不提供链接校验，请自觉输入csdn博客的链接。输入非csdn博客的链接将不会返回预期数据。
+                                </p>
+                                <p>
+                                    2、该接口有5分钟缓存，如果你输入的链接爬不到数据，请换一个链接或者5分钟后重试。
+                                </p>
+                                <p>
+                                    3、一个有效的链接是
+                                <pre data-simplebar="" class="code-box"> <button class="copy-btn" data-input="csdnlink" data-btn="csdn_l">尝试</button><code>https://blog.csdn.net/qq_41544289/article/details/123065919</code> </pre>
+                                </p>
+                                <div class="row contact-us">
+                                    <div class="col-12">
+                                        <div class="contact-form">
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <div class="form-group">
+                                                        <input name="csdnlink" id="csdnlink" type="text" placeholder="输入csdn链接" required="required">
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="button" style="margin-top: 0px;">
+                                                        <button type="button" id="csdn_l" class="btn">爬</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="alert-list-wrapper blog-st-1">
+
+                                                </div>
+                                            </div>
+                                            <div class="row blog-text-1">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tabContent-1-22">
+                                <p>
+                                    1、不提供链接校验，请自觉输入微信公众号文章的链接。输入非微信公众号的链接将不会返回预期数据。
+                                </p>
+                                <p>
+                                    2、可在微信公众号左上方复制链接。
+                                </p>
+                                <p>
+                                    3、一个有效的链接是
+                                <pre data-simplebar="" class="code-box"> <button class="copy-btn" data-input="weixinlink" data-btn="weixin_l">尝试</button><code>https://mp.weixin.qq.com/s/IQ-lWcjXlflTLU_KMBZzgw</code> </pre>
+                                </p>
+                                <div class="row contact-us">
+                                    <div class="col-12">
+                                        <div class="contact-form">
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <div class="form-group">
+                                                        <input name="weixinlink" id="weixinlink" type="text" placeholder="输入微信公众号文章链接" required="required">
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="button" style="margin-top: 0px;">
+                                                        <button type="button" id="weixin_l" class="btn">爬</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="alert-list-wrapper blog-st-2">
+
+                                                </div>
+                                            </div>
+                                            <div class="row blog-text-2">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tabContent-1-44">
+                                <p>
+                                    仅供演示用，请输入bilibili链接
+                                </p>
+                                <div class="row contact-us">
+                                    <div class="col-12">
+                                        <div class="contact-form">
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <div class="form-group">
+                                                        <input id="webR" value="https://thwiki.cc/%E9%A6%96%E9%A1%B5" type="text" placeholder="输入任意网址" required="required">
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="button" style="margin-top: 0px;">
+                                                        <button type="button" id="webR_l" class="btn">爬</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="alert-list-wrapper blog-st-4">
+                                                    <div class="content" id="kkt" style="display: none">
+                                                        <span style="cursor: pointer" id="render1">渲染</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <span style="cursor: pointer" id="wsqzh">[收起展开]</span>
+                                                    </div>
+                                                    <ol class="ordered-list" style="list-style: auto; padding-left: 20px;">
+
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tabContent-1-33">
+                                <p>
+                                    此生无悔入东方，来世愿还幻想乡！恋恋天下第一！爬取的是东方正作人物，同人的没有爬。网站是有东方万维网之称的<a href="https://thwiki.cc/%E5%AE%98%E6%96%B9%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8" target="_blank" class="ticket">THBWiki</a>
+                                </p>
+                                <ul class="unordered-list">
+                                    <li>查看<a class="ticket" href="add.html?id=1">爬虫配置</a></li>
+                                </ul>
+                                <p id="ffff"></p>
+                                <div class="all-speakers">
+                                    <div class="row df">
+                                        <div class="button" style="margin-top: 0px;">
+                                            <button type="button" id="df_project" class="btn">爬</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tabContent-1-55">
+                                <p>
+                                    爬虫的原生实现案例，爬取静态页面所有媒体资源
+                                </p>
+                                <div class="row contact-us">
+                                    <div class="col-12">
+                                        <div class="contact-form">
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <div class="form-group">
+                                                        <input id="webbilibili" value="https://www.bilibili.com/video/BV1d44y177CH" type="text" placeholder="输入bilibili网址" required="required">
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="button" style="margin-top: 0px;">
+                                                        <button type="button" id="webbilibili_l" class="btn">爬</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="alert-list-wrapper blog-st-4">
+                                                    <div class="content" id="mebil">
+                                                        <h6 style="cursor: pointer">[收起展开]</h6>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <textarea style="padding:0px;height: 400px" id="message" rows="5" cols="5" class="form-control" placeholder="信息">
+                                                        </textarea>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tabContent-1-66">
+                                <div class="table-wrapper table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>
+                                                <h6>名称</h6>
+                                            </th>
+                                            <th>
+                                                <h6>描述</h6>
+                                            </th>
+                                            <th>
+                                                <h6>目标网站</h6>
+                                            </th>
+                                            <th>
+                                                <h6>接口</h6>
+                                            </th>
+                                            <th>
+                                                <h6>操作</h6>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="allSpider">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div></div>
+    </div>
+</section>
+
+
+<section class="accordion-area section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h3 class="wow zoomIn" data-wow-delay=".2s">DOC</h3>
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">文档</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".6s">帮助你搭建自己的爬虫框架，并让你了解更多细节</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="single-topic">
+                    <div class="topic-content">
+                        <h4 class="topic-title"><i class="lni lni-list"></i>开始使用</h4>
+                        <ul class="topic-list">
+                            <li>
+                                <a href="documentation.html#installation"><i class="lni lni-notepad"></i> 环境安装</a>
+                            </li>
+                            <li>
+                                <a href="documentation.html#quick-start"><i class="lni lni-notepad"></i> 项目配置</a>
+                            </li>
+                            <li>
+                                <a href="documentation.html#layout-theme"><i class="lni lni-notepad"></i> 内置页面</a>
+                            </li>
+                        </ul>
+                        <a href="documentation.html" class="more">查看更多 <i class="lni lni-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+
+                <div class="single-topic">
+                    <div class="topic-content">
+                        <h4 class="topic-title"><i class="lni lni-grid-alt"></i> 爬虫</h4>
+                        <ul class="topic-list">
+                            <li>
+                                <a href="documentation.html#pcn"><i class="lni lni-notepad"></i> 爬虫的原生实现</a>
+                            </li>
+                            <li>
+                                <a href="documentation.html#spider"><i class="lni lni-notepad"></i> 蜘蛛</a>
+                            </li>
+                            <li>
+                                <a href="documentation.html#webmagic"><i class="lni lni-notepad"></i> webMagic</a>
+                            </li>
+                            <li>
+                                <a href="documentation.html#youget"><i class="lni lni-notepad"></i> you-get</a>
+                            </li>
+                        </ul>
+                        <a href="documentation.html" class="more">查看更多 <i class="lni lni-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+
+                <div class="single-topic">
+                    <div class="topic-content">
+                        <h4 class="topic-title"><i class="lni lni-grid-alt"></i> 其他</h4>
+                        <ul class="topic-list">
+                            <li>
+                                <a href="documentation.html#changelog"><i class="lni lni-notepad"></i> 日志</a>
+                            </li>
+                            <li>
+                                <a href="documentation.html#credits"><i class="lni lni-notepad"></i> 鸣谢</a>
+                            </li>
+                        </ul>
+                        <a href="documentation.html" class="more">查看更多 <i class="lni lni-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="row mb-n7 footer-list"><div class="col-lg-3 col-sm-6 mb-7">
+            <div class="footer-widget">
+                <h4 class="footer-title footer-title-0">联系方式</h4><ul class="footer-des"><li class="footer-menu-items"><i class="lab la-qq"></i><a class="footer-menu-link" href="tencent://Message/?Uin=937040147&amp;websiteName=15028582175&amp;Menu=yes">937040147</a></li><li class="footer-menu-items"><i class="lab la-weixin"></i><a class="footer-menu-link" href="#">HOPPIN_HAZZ</a></li><li class="footer-menu-items"><i class="las la-envelope-open"></i><a class="footer-menu-link" href="mailto:anmiezata@163.com">anmiezata@163.com</a></li><li class="footer-menu-items"><i class="las la-phone-volume"></i><a class="footer-menu-link" href="tel:15028582175">15028582175</a></li></ul>
+            </div>
+        </div><div class="col-lg-3 col-sm-6 mb-7">
+            <div class="footer-widget">
+                <h4 class="footer-title footer-title-1">友情链接</h4><ul class="footer-des"><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://www.bilibili.com/">哔哩哔哩</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://gitee.com">码云Gitee</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://www.csdn.net/">CSDN</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://www.runoob.com/">菜鸟教程</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://leetcode-cn.com/">力扣(leetcode)</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://processon.com/">Process on</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://github.com/">Github</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://www.cnblogs.com/">博客园</a></li></ul>
+            </div>
+        </div><div class="col-lg-3 col-sm-6 mb-7">
+            <div class="footer-widget">
+                <h4 class="footer-title footer-title-2">关于我</h4><ul class="footer-des"><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://space.bilibili.com/230296772?spm_id_from=333.1007.0.0">B站：装甲浮士德</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://gitee.com/hoppin">我的Gitee账号</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://blog.csdn.net/qq_41544289?spm=1000.2115.3001.5343">我的博客</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://github.com/HOPPINAN_HAZZ">Github账号</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://music.163.com/#/user/home?id=309621600">网易云时间</a></li></ul>
+            </div>
+        </div><div class="col-lg-3 col-sm-6 mb-7">
+            <div class="footer-widget">
+                <h4 class="footer-title footer-title-3">开源项目</h4><ul class="footer-des"><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://gitee.com/hoppin/hoppinzq">剑来框架</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://gitee.com/hoppin/hoppinzq-netease_cloud_music">网易云</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://gitee.com/hoppin/hoppinzq-jquery-zjax">zjax</a></li><li class="footer-menu-items"><a class="footer-menu-link" target="_blank" href="https://gitee.com/hoppin/hoppinzq-resourcecache">zCache</a></li></ul>
+            </div>
+        </div></div>
+    </div>
+    <div class="copy-right bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p><a target="_blank" href="https://beian.miit.gov.cn/">Copyright © HOPPINZQ.
+                        ICP主体备案号:鲁ICP备2021023310号</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<a href="#" class="scroll-top">
+    <i class="lni lni-chevron-up"></i>
+</a>
+<script src="/static/config.js"></script>
+<script src="http://hoppinzq.com/spider/js/jquery.min.js"></script>
+<script src="http://hoppinzq.com/spider/js/bootstrap.min.js"></script>
+<script src="http://hoppinzq.com/zui/static/js/ztips.js"></script>
+<script src="http://hoppinzq.com/static/js/plugins/buttonLoading.js"></script>
+<script src="http://hoppinzq.com/static/js/plugins/lightbox-2.6.min.js"></script>
+<script src="http://hoppinzq.com/spider/js/simple-bar.js"></script>
+<script src="http://hoppinzq.com/spider/js/wow.min.js"></script>
+<script src="http://hoppinzq.com/spider/js/cPager.js"></script>
+<script src="http://hoppinzq.com/static/js/plugins/localforage.js"></script>
+<script src="/static/js/main.js"></script>
+<script>
+    new WOW().init();
+</script>
+</body>
+</html>

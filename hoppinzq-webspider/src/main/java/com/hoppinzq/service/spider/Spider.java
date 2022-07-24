@@ -1,6 +1,7 @@
-package com.hoppinzq.service.html;
+package com.hoppinzq.service.spider;
 
 
+import com.hoppinzq.service.html.HTTP;
 import com.hoppinzq.service.log.Log;
 
 import com.hoppinzq.service.spiderService.ISpiderReportable;

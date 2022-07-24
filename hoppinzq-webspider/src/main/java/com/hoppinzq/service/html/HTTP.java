@@ -31,7 +31,7 @@ public abstract class HTTP {
     public HTTP() {
     }
 
-    abstract HTTP copy();
+    public abstract HTTP copy();
 
     protected abstract void lowLevelSend(String url, String str2) throws UnknownHostException, IOException;
 

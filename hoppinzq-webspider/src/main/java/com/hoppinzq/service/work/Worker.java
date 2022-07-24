@@ -7,6 +7,8 @@ import com.hoppinzq.service.cache.BloomFilterCache;
 import com.hoppinzq.service.config.WebSocketProcess;
 import com.hoppinzq.service.dao.SpiderDao;
 import com.hoppinzq.service.html.*;
+import com.hoppinzq.service.spider.Spider;
+import com.hoppinzq.service.spider.SpiderInternalWorkload;
 import com.hoppinzq.service.spiderService.ISpiderReportable;
 import com.hoppinzq.service.spiderService.IWorkloadStorable;
 import org.apache.lucene.analysis.Analyzer;

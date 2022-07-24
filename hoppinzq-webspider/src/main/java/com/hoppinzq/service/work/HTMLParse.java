@@ -73,7 +73,7 @@ public class HTMLParse {
             indexWriter.close();
         }
         catch (Exception ex) {
-            System.out.println(ex);
+            //System.out.println(ex);
         }
     }
 

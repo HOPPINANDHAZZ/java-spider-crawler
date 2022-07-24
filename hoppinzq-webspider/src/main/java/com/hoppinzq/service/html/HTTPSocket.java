@@ -192,7 +192,7 @@ public class HTTPSocket extends HTTP {
         }
     }
 
-    HTTP copy() {
+    public HTTP copy() {
         return new HTTPSocket();
     }
 }

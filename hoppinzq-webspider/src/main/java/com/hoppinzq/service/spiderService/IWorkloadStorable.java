@@ -16,4 +16,6 @@ public interface IWorkloadStorable {
     char getURLStatus(String url);
 
     void clear();
+
+    String getWork();
 }

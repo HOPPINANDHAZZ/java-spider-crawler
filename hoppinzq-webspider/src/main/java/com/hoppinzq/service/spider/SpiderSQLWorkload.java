@@ -140,6 +140,11 @@ public class SpiderSQLWorkload implements IWorkloadStorable {
         } catch (SQLException sqlException) {
             Log.logException("错误的SQL: ", sqlException);
         }
+    }
 
+    @Override
+    public String getWork() {
+        //todo
+        return "需要查sql";
     }
 }

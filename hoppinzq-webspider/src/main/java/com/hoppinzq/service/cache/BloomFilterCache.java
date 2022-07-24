@@ -11,7 +11,7 @@ import java.util.*;
  * @author: zq
  */
 public class BloomFilterCache {
-
+    public static Boolean isE=false;//是否可用
     public static BloomFilter<CharSequence> urlIndexFilter = BloomFilter.create(Funnels.stringFunnel(Charset.forName("utf-8")), 100000000, 0.0001);
     public static List<SpiderLink> urls= Collections.synchronizedList(new ArrayList<SpiderLink>());
 }

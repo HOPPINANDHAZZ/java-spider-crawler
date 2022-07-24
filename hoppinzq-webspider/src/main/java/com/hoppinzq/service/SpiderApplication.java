@@ -4,7 +4,9 @@ import com.hoppinzq.service.aop.annotation.EnableGateway;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.scheduling.annotation.EnableAsync;
 
+@EnableAsync
 @EnableGateway
 @SpringBootApplication
 @ServletComponentScan

@@ -2,6 +2,7 @@ package com.hoppinzq.service.work;
 
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
+import com.hoppinzq.service.bean.RequestInfo;
 import com.hoppinzq.service.bean.SpiderLink;
 import com.hoppinzq.service.cache.BloomFilterCache;
 import com.hoppinzq.service.config.WebSocketProcess;
@@ -21,6 +22,7 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.wltea.analyzer.lucene.IKAnalyzer;
 
@@ -47,6 +49,9 @@ public class Worker implements ISpiderReportable {
     private String indexPath;
 
     public void startWork(String url) {
+        if(!BloomFilterCache.isE){
+            throw new RuntimeException("暂不可用,请等待缓存预热完成！");
+        }
         try {
             IWorkloadStorable wl = new SpiderInternalWorkload();
             Spider _spider
@@ -124,7 +129,7 @@ public class Worker implements ISpiderReportable {
     // 用于处理网页，这是Spider程序要完成的实际工作。
     public void processPage(HTTP http) {
         System.out.println("扫描网页：" + http.getURL());
-        new HTMLParse(http).start();
+        new HTMLParse(http,spiderDao).start();
     }
 
     // 用来请求一个被处理的网页。
@@ -139,7 +144,10 @@ public class Worker implements ISpiderReportable {
 
     // 当Spider程序没有剩余的工作时调用这个方法。
     public void spiderComplete() {
-        spiderDao.insertSpiderLink(BloomFilterCache.urls);
+        if(BloomFilterCache.urls.size()>0){
+            spiderDao.insertSpiderLink(BloomFilterCache.urls);
+        }
         System.out.println("已结束");
     }
+
 }

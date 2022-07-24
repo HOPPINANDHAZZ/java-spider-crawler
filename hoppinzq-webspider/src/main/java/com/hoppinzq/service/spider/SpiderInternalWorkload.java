@@ -102,4 +102,11 @@ public class SpiderInternalWorkload implements IWorkloadStorable {
         this._complete.clear();
         this._running.clear();
     }
+
+    @Override
+    public String getWork() {
+        return "等待的工作："+this._waiting.toString()
+                +"\n"+"正在运行的工作："+this._running.toString()
+                +"\n"+"已完成的工作："+this._complete.toString();
+    }
 }

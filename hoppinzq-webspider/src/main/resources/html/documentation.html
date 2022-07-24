@@ -1217,11 +1217,14 @@ if __name__ == '__main__':
                                                 <li>优化了索引写入</li>
                                                 <li>优化了蜘蛛表逻辑，为蜘蛛表添加isIndex字段以标志该字段是否已被写入索引库</li>
                                                 <li>优化了链接处理，现在链接上的查询条件在进入布隆过滤器前会被丢弃</li>
+                                                <li>现在布隆过滤器在项目启动后会预热缓存，预热期间不让调用蜘蛛接口</li>
+                                                <li>为蜘蛛入库添加一块缓冲，入库现在是异步的，不影响蜘蛛的工作</li>
                                             </ol>
                                             <p class="mb-10">bug修复</p>
                                             <ol class="ordered-list mb-10"
                                                 style="list-style: auto; padding-left: 20px;">
                                                 <li>修复了重复链接可能再被加入工作的bug</li>
+                                                <li>修复了多个线程插入重复数据的重大bug</li>
                                                 <li>修复了关键字可能会读取到html代码段的bug</li>
                                                 <li>修复了数据库连接池hikari的bug</li>
                                             </ol>

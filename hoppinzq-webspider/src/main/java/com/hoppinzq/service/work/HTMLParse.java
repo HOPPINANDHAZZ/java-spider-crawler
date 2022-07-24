@@ -33,6 +33,9 @@ public class HTMLParse {
                 int index = _href.indexOf("?");
                 if (index != -1)
                     _href = _href.substring(0, index);
+                int indexJing = _href.indexOf("#");
+                if (indexJing != -1)
+                    _href = _href.substring(0, indexJing);
                 if(_link.getPrompt()!=null){
                     String _title = input(_link.getPrompt().trim());
                     if(_title.length()>0&&BloomFilterCache.urlIndexFilter.mightContain(_href)){

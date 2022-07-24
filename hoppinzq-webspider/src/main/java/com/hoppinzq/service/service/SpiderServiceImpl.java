@@ -7,6 +7,8 @@ import com.hoppinzq.service.aop.annotation.ApiMapping;
 import com.hoppinzq.service.aop.annotation.ApiServiceMapping;
 import com.hoppinzq.service.aop.annotation.ServiceRegister;
 import com.hoppinzq.service.bean.SpiderLink;
+import com.hoppinzq.service.cache.BloomFilterCache;
+import com.hoppinzq.service.cache.SpiderCache;
 import com.hoppinzq.service.dao.SpiderDao;
 import com.hoppinzq.service.interfaceService.SpiderService;
 import com.hoppinzq.service.util.EmojiConvert;
@@ -62,11 +64,18 @@ public class SpiderServiceImpl implements SpiderService {
 
     @ApiMapping(value = "sqltoindex", title = "数据库入索引库", description = "数据库入索引库")
     public void sql2index() throws IOException {
-        List<SpiderLink> lists=spiderDao.queryAllLinkNotIndex();
+        List<SpiderLink> lists=new ArrayList<>();
+        if(BloomFilterCache.isE){
+            lists= SpiderCache.linksIndexCache;
+        }else{
+            lists=spiderDao.queryAllLinkNotIndex();
+        }
         Analyzer analyzer = new IKAnalyzer();
         Directory dir = FSDirectory.open(Paths.get(indexPath));
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
+        config.setMaxBufferedDocs(100000);
         IndexWriter indexWriter = new IndexWriter(dir, config);
+        indexWriter.forceMerge(100000);
         List<Document> docList = new ArrayList<>();
         for (SpiderLink spiderLink:lists) {
             if(spiderLink.getTitle()!=null&&spiderLink.getTitle().toString().length()!=0&& spiderLink.getLink()!=null){
@@ -80,7 +89,9 @@ public class SpiderServiceImpl implements SpiderService {
             indexWriter.addDocument(doc);
         }
         spiderDao.updateLinkInIndex(lists);
+        lists=null;
+        System.gc();
         indexWriter.close();
-        System.out.println("完成！");
+        System.out.println("数据插入索引库完成！");
     }
 }

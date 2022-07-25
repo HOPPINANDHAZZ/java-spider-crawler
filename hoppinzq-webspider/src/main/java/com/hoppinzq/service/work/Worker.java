@@ -86,12 +86,20 @@ public class Worker implements ISpiderReportable {
             TopDocs topDocs = indexSearcher.search(query.build(), 10000);
             ScoreDoc[] scoreDocs = topDocs.scoreDocs;
             if (scoreDocs != null) {
-                for (ScoreDoc scoreDoc : scoreDocs) {
-                    //获取查询到的文档唯一标识, 文档id, 这个id是lucene在创建文档的时候自动分配的
-                    int docID = scoreDoc.doc;
-                    Document doc = indexSearcher.doc(docID);
+                //伪分页，
+                int start =0;
+                int end=500;
+                for (int i = start; i < end; i ++) {
+                    if (start > topDocs.totalHits || topDocs.totalHits == i) {
+                        break;
+                    }
+                    int docID = scoreDocs[i].doc;
+                    Document doc = indexReader.document(docID);
                     spiderLinks.add(new SpiderLink(doc.get("title"), doc.get("link")));
                 }
+//                for (ScoreDoc scoreDoc : scoreDocs) {
+//
+//                }
             }
             indexReader.close();
         } catch (Exception ex) {

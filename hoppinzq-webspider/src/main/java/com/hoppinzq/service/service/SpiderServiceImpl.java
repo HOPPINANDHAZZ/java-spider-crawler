@@ -3,6 +3,7 @@ package com.hoppinzq.service.service;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.hoppinzq.service.aop.annotation.ApiCache;
 import com.hoppinzq.service.aop.annotation.ApiMapping;
 import com.hoppinzq.service.aop.annotation.ApiServiceMapping;
 import com.hoppinzq.service.aop.annotation.ServiceRegister;
@@ -49,6 +50,7 @@ public class SpiderServiceImpl implements SpiderService {
         worker.startWork(url);
     }
 
+    @ApiCache
     @ApiMapping(value = "queryweb", title = "查询网站", description = "根据关键词查询网站")
     public JSONArray queryweb(String search) {
         List<SpiderLink> spiderLinks=worker.queryweb(search);

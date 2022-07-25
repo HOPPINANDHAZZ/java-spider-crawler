@@ -47,7 +47,8 @@ public class SpiderServiceImpl implements SpiderService {
 
     @ApiMapping(value = "startWork", title = "爬取网站链接关键字", description = "爬取网站链接关键字")
     public void startWork(String url){
-        worker.startWork(url);
+        throw new RuntimeException("请解开com.hoppinzq.service.service.SpiderServiceImpl第51行代码的注释，然后自己尝试");
+        //worker.startWork(url);
     }
 
     @ApiCache

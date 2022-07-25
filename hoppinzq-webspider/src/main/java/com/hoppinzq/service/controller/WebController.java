@@ -19,6 +19,10 @@ public class WebController {
     public String login(@PathVariable("url") String url){
         return url+".html";
     }
+    @RequestMapping("pc/{url}.html")
+    public String pclogin(@PathVariable("url") String url){
+        return url+".html";
+    }
 
     @ResponseBody
     @RequestMapping("/apiParams")

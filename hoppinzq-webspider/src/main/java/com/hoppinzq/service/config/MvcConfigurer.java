@@ -29,9 +29,6 @@ public class MvcConfigurer implements WebMvcConfigurer {
      */
     public void addInterceptors(InterceptorRegistry registry){
 
-        //URL使用user开头的请求进入此拦截器
-        //registry.addInterceptor(new UserSessionHandlerInterceptor()).addPathPatterns("/user/**");
-        //registry.addInterceptor(new Urladd()).addPathPatterns("/**").excludePathPatterns("/static/**");
     }
 
     @Override
@@ -45,7 +42,7 @@ public class MvcConfigurer implements WebMvcConfigurer {
                 // 设置允许的方法
                 .allowedMethods("*")
                 // 跨域允许时间
-                .maxAge(3600);
+                .maxAge(36000);
         //允许某某网址的跨域访问，限定访问路径是/api，限定方法是get，post
         //registry.addMapping("/api/**").allowedOrigins("https://domain2.com").allowedMethods("GET","POST");
     }

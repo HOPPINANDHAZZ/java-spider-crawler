@@ -23,13 +23,13 @@ public class CacheRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         logger.debug("开始预热缓存");
-        List<SpiderLink> spiderLinkList=dao.queryAllLink();
-        for(SpiderLink s:spiderLinkList){
-            BloomFilterCache.urlIndexFilter.put(s.getLink());
-            if(s.getIsIndex()==0){
-                SpiderCache.linksIndexCache.add(s);
-            }
-        }
+//        List<SpiderLink> spiderLinkList=dao.queryAllLink();
+//        for(SpiderLink s:spiderLinkList){
+//            BloomFilterCache.urlIndexFilter.put(s.getLink());
+//            if(s.getIsIndex()==0){
+//                SpiderCache.linksIndexCache.add(s);
+//            }
+//        }
         BloomFilterCache.isE=true;
         logger.debug("预热缓存结束");
     }

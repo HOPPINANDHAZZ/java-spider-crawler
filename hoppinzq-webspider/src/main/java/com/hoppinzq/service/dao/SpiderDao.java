@@ -47,7 +47,7 @@ public interface SpiderDao {
             "</script>")
     void insertSpiders(List<SpiderBean> spiderBeans);
 
-    @Insert("insert into spidermajor(id,name,description,urldemo,thread) values(#{sm.id},#{sm.name},#{sm.desc},#{sm.urldemo},#{sm.threadNum})")
+    @Insert("insert into spidermajor(id,name,description,urldemo,thread) values(#{sm.id},#{sm.name},#{sm.description},#{sm.urldemo},#{sm.threadNum})")
     void insertSpiderMajor(@Param(value = "sm") SpiderMajor spiderMajor);
 
     @Select("select * from spidermajor where id= #{id}")

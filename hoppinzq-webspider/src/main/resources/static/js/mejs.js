@@ -121,14 +121,14 @@ $(function () {
                    return;
                }else{
                    let url =$("#url").val();
-                   $.get(`${ip}/hoppinzq?method=test&params={"spiderMajor":{"name":"测试","desc":"测试","urldemo":"${url}"},"spiderBeans":${JSON.stringify(arr)}}`,function (data) {
+                   $.get(`${ip}/hoppinzq?method=test&params={"spiderMajor":{"name":"测试","description":"测试","urldemo":"${url}"},"spiderBeans":${JSON.stringify(arr)}}`,function (data) {
                        $me.buttonLoading("stop");
                        $(".url__").val(url)
                        $(".json").html(new JSONFormat(data, 4).toString());
                    })
                }
            })
-           $("#add_pc__").click(function () {
+           $("#add_pc__").off("click").on("click", function () {
                if($(".pc__name").val()==""){
                    alert("名称必填");
                    $(".pc__name").focus();
@@ -137,8 +137,8 @@ $(function () {
                let name=$(".pc__name").val();
                let thread=$(".thread").val();
                let urldemo=$(".url__").val();
-               let desc=$(".desc__").val();
-               $.get(`${ip}/hoppinzq?method=insertSpiders&params={"spiderMajor":{"name":"${name}","desc":"${desc}","urldemo":"${urldemo}"},"spiderBeans":${JSON.stringify(arr)}}`,function (data) {
+               let description=$(".desc__").val();
+               $.get(`${ip}/hoppinzq?method=insertSpiders&params={"spiderMajor":{"name":"${name}","description":"${description}","urldemo":"${urldemo}"},"spiderBeans":${JSON.stringify(arr)}}`,function (data) {
                    let m=JSON.parse(data);
                    if(m.code==200){
                        let p=m.data;
